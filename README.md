@@ -1,7 +1,6 @@
 Compiles OK with g++ (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609 by typing
 
- ```{r, engine='bash', count_lines}
- 
+ ```
  g++ -o getRandomStuff getRandomStuff.cpp Random.cpp -std=c++11 -fopenmp
  ```
 
