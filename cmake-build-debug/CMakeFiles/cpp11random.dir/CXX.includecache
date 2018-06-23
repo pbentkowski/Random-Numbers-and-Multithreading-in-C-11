@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/piotr/CodeProjects/cpp11random/Random.cpp
+random
+-
+Random.h
+/home/piotr/CodeProjects/cpp11random/Random.h
+
+/home/piotr/CodeProjects/cpp11random/Random.h
+random
+-
+
+/home/piotr/CodeProjects/cpp11random/getRandomStuff.cpp
+iostream
+-
+fstream
+-
+time.h
+-
+omp.h
+-
+Random.h
+/home/piotr/CodeProjects/cpp11random/Random.h
+

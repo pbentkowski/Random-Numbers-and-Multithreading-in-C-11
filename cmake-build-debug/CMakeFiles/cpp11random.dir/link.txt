@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -fopenmp -g   CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o CMakeFiles/cpp11random.dir/Random.cpp.o  -o cpp11random 
