@@ -1,4 +1,4 @@
-### How to use C++11 `<random>` with OpenMP `<omp.h>`
+### How to use C++11 *random* with OpenMP *omp.h*
 
 #### What is here?
 
@@ -22,5 +22,5 @@ g++ -o bin/rands Random.cpp getRandomMulti.cpp -std=c++11 -fopenmp
 #### Reference
 
  1. Regarding the multi-threading programming in C++11 here's a guide into OpenMP: https://bisqwit.iki.fi/story/howto/openmp/
-
  1. For more tips how to use the `<random>` library in C++11 see: https://isocpp.org/files/papers/n3551.pdf
+ 1. For using *std::discrete\_distribution* with user defined weights: https://en.cppreference.com/w/cpp/numeric/random/piecewise_constant_distribution
