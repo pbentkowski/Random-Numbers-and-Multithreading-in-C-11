@@ -5,7 +5,7 @@
 /**
  * @brief Constructor. Creates the PRNG engine and seeds it using the std::random_device
  */
-Random::Random(): m_mt()
+Random::Random(): m_mt(std::mt19937(13637))
 {
     m_mt.seed(std::random_device()());
 }
