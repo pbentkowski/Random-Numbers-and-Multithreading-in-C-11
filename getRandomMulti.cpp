@@ -5,7 +5,9 @@
 #include "Random.h"
 
  // Compiles with g++ (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609 by typing
+ // mkdir bin
  // g++ -o bin/rands Random.cpp getRandomMulti.cpp -std=c++11 -fopenmp
+ // ./bin/rands 
 
  // Regarding the multithreading programming in C++11  for a guide into OpenMP
  // see https://bisqwit.iki.fi/story/howto/openmp/

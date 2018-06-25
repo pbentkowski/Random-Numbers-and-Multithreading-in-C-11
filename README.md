@@ -11,10 +11,12 @@ Three files showing how to use it:
 
 #### Compilation
 
-Compiles OK with **g++ (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609**  e.g. by typing
+Compiles with **g++ (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609** and runs e.g. by typing
 
 ```
-g++ -o rands Random.cpp getRandomMulti.cpp -std=c++11 -fopenmp
+mkdir bin
+g++ -o bin/rands Random.cpp getRandomMulti.cpp -std=c++11 -fopenmp
+./bin/rands
 ```
 
 #### Reference
