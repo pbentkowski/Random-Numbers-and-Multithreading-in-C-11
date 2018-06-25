@@ -1,0 +1,11 @@
+# ignored files
+# ignore all files in the following directories
+bin/
+obj/
+old/
+results/
+cmake-build-debug/
+# ignore temp files
+*~
+randomz_*
+rands

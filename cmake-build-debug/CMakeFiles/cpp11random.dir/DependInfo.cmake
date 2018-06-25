@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/piotr/CodeProjects/cpp11random/Random.cpp" "/home/piotr/CodeProjects/cpp11random/cmake-build-debug/CMakeFiles/cpp11random.dir/Random.cpp.o"
-  "/home/piotr/CodeProjects/cpp11random/getRandomStuff.cpp" "/home/piotr/CodeProjects/cpp11random/cmake-build-debug/CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o"
+  "/home/piotr/CodeProjects/random_multi-thread_cpp11/Random.cpp" "/home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug/CMakeFiles/cpp11random.dir/Random.cpp.o"
+  "/home/piotr/CodeProjects/random_multi-thread_cpp11/getRandomStuff.cpp" "/home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug/CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

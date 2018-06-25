@@ -43,10 +43,10 @@ RM = /opt/clion-2018.1.5/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/piotr/CodeProjects/cpp11random
+CMAKE_SOURCE_DIR = /home/piotr/CodeProjects/random_multi-thread_cpp11
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/piotr/CodeProjects/cpp11random/cmake-build-debug
+CMAKE_BINARY_DIR = /home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cpp11random.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/cpp11random.dir/flags.make
 
 CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o: CMakeFiles/cpp11random.dir/flags.make
 CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o: ../getRandomStuff.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/piotr/CodeProjects/cpp11random/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o -c /home/piotr/CodeProjects/cpp11random/getRandomStuff.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o -c /home/piotr/CodeProjects/random_multi-thread_cpp11/getRandomStuff.cpp
 
 CMakeFiles/cpp11random.dir/getRandomStuff.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp11random.dir/getRandomStuff.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotr/CodeProjects/cpp11random/getRandomStuff.cpp > CMakeFiles/cpp11random.dir/getRandomStuff.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotr/CodeProjects/random_multi-thread_cpp11/getRandomStuff.cpp > CMakeFiles/cpp11random.dir/getRandomStuff.cpp.i
 
 CMakeFiles/cpp11random.dir/getRandomStuff.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp11random.dir/getRandomStuff.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotr/CodeProjects/cpp11random/getRandomStuff.cpp -o CMakeFiles/cpp11random.dir/getRandomStuff.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotr/CodeProjects/random_multi-thread_cpp11/getRandomStuff.cpp -o CMakeFiles/cpp11random.dir/getRandomStuff.cpp.s
 
 CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o.provides.build: CMakeFiles/cpp11
 
 CMakeFiles/cpp11random.dir/Random.cpp.o: CMakeFiles/cpp11random.dir/flags.make
 CMakeFiles/cpp11random.dir/Random.cpp.o: ../Random.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/piotr/CodeProjects/cpp11random/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpp11random.dir/Random.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp11random.dir/Random.cpp.o -c /home/piotr/CodeProjects/cpp11random/Random.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpp11random.dir/Random.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp11random.dir/Random.cpp.o -c /home/piotr/CodeProjects/random_multi-thread_cpp11/Random.cpp
 
 CMakeFiles/cpp11random.dir/Random.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp11random.dir/Random.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotr/CodeProjects/cpp11random/Random.cpp > CMakeFiles/cpp11random.dir/Random.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotr/CodeProjects/random_multi-thread_cpp11/Random.cpp > CMakeFiles/cpp11random.dir/Random.cpp.i
 
 CMakeFiles/cpp11random.dir/Random.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp11random.dir/Random.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotr/CodeProjects/cpp11random/Random.cpp -o CMakeFiles/cpp11random.dir/Random.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotr/CodeProjects/random_multi-thread_cpp11/Random.cpp -o CMakeFiles/cpp11random.dir/Random.cpp.s
 
 CMakeFiles/cpp11random.dir/Random.cpp.o.requires:
 
@@ -117,7 +117,7 @@ cpp11random: CMakeFiles/cpp11random.dir/getRandomStuff.cpp.o
 cpp11random: CMakeFiles/cpp11random.dir/Random.cpp.o
 cpp11random: CMakeFiles/cpp11random.dir/build.make
 cpp11random: CMakeFiles/cpp11random.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/piotr/CodeProjects/cpp11random/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cpp11random"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cpp11random"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp11random.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/cpp11random.dir/clean:
 .PHONY : CMakeFiles/cpp11random.dir/clean
 
 CMakeFiles/cpp11random.dir/depend:
-	cd /home/piotr/CodeProjects/cpp11random/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/piotr/CodeProjects/cpp11random /home/piotr/CodeProjects/cpp11random /home/piotr/CodeProjects/cpp11random/cmake-build-debug /home/piotr/CodeProjects/cpp11random/cmake-build-debug /home/piotr/CodeProjects/cpp11random/cmake-build-debug/CMakeFiles/cpp11random.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/piotr/CodeProjects/random_multi-thread_cpp11 /home/piotr/CodeProjects/random_multi-thread_cpp11 /home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug /home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug /home/piotr/CodeProjects/random_multi-thread_cpp11/cmake-build-debug/CMakeFiles/cpp11random.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cpp11random.dir/depend
 

@@ -40,3 +40,9 @@ float Random::getRandomFromGaussian(float mean, float variance)
     using parm_t = decltype(d)::param_type;
     return d( m_mt, parm_t{mean, variance} );
 }
+
+bool Random::getBool(float prob){
+    static std::uniform_real_distribution<float> d{};
+    using parm_t = decltype(d)::param_type;
+    return ( d( m_mt, parm_t{0., 1.} ) < prob );
+}

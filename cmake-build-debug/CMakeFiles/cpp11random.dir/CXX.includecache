@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/piotr/CodeProjects/cpp11random/Random.cpp
+/home/piotr/CodeProjects/random_multi-thread_cpp11/Random.cpp
 random
 -
 Random.h
-/home/piotr/CodeProjects/cpp11random/Random.h
+/home/piotr/CodeProjects/random_multi-thread_cpp11/Random.h
 
-/home/piotr/CodeProjects/cpp11random/Random.h
+/home/piotr/CodeProjects/random_multi-thread_cpp11/Random.h
 random
 -
 
-/home/piotr/CodeProjects/cpp11random/getRandomStuff.cpp
+/home/piotr/CodeProjects/random_multi-thread_cpp11/getRandomStuff.cpp
 iostream
 -
 fstream
@@ -26,5 +26,5 @@ time.h
 omp.h
 -
 Random.h
-/home/piotr/CodeProjects/cpp11random/Random.h
+/home/piotr/CodeProjects/random_multi-thread_cpp11/Random.h
 

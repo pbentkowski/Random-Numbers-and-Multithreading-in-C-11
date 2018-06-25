@@ -16,8 +16,18 @@ class Random{
         float getUni();
         //return a random float value in from a user-defined gaussian distribution
         float getRandomFromGaussian(float mean, float variance);
+        //return true with probability prob, in range [0,1);
+        bool getBool(float prob);
 
-        
+        //return a random value in [0, size-1] according to the distribution in dist
+        unsigned int getRandomFromDist(float *dist, unsigned int size);
+        //return a random value in [min, max] according to the distribution in dist
+        unsigned int getRandomFromDist(float *dist, unsigned int size, unsigned int min, unsigned int max);
+        //return a random value in [0, dist.size()] according to the distribution in dist
+        unsigned int getRandomFromDist(const std::vector<float> &dist);
+        //return a random value in [min, max] according to the distribution in dist
+        unsigned int getRandomFromDist(const std::vector<float> &dist, unsigned int min, unsigned int max);
+
 };
 
 #endif // RANDOM_H

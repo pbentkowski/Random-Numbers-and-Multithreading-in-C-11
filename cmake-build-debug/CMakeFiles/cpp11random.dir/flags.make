@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -fopenmp -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/piotr/CodeProjects/cpp11random/. 
+CXX_INCLUDES = -I/home/piotr/CodeProjects/random_multi-thread_cpp11/. 
 
