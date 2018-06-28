@@ -7,7 +7,7 @@
  // Compiles with g++ (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609 by typing
  // mkdir bin
  // g++ -o bin/rands Random.cpp getRandomMulti.cpp -std=c++11 -fopenmp
- // ./bin/rands 
+ // ./bin/rands
 
  // Regarding the multithreading programming in C++11  for a guide into OpenMP
  // see https://bisqwit.iki.fi/story/howto/openmp/
@@ -17,7 +17,8 @@
 
 // Function declarations
 void simpleRandomRunz(int numberOfThreads, Random *randGen_ptr);
-void preDefinDistrRandomRunz(int numberOfThreads, Random *randGen_ptr);
+void preDefinDistrRandomRunz(int numberOfThreads, std::vector<float> weigths,
+                             Random *randGen_ptr);
 
 
 int main()
@@ -42,7 +43,9 @@ int main()
 
     // run the parallel random machinery
 //    simpleRandomRunz(numberOfThreads, rng);
-    preDefinDistrRandomRunz(numberOfThreads, rng);
+
+    std::vector<float> weights = {0.1, 0.5, 0.5, 0.1};
+    preDefinDistrRandomRunz(numberOfThreads, weights, rng);
 
     std::cout << "Done! Check the 'randomz_*.dat' files for output. "
               << std::endl;
@@ -55,7 +58,7 @@ int main()
  * @brief Generates the `numberOfThreads` of files with random integers between 0 and 99 (inclusive)
  *
  * @param numberOfThreads - how many threads are there (must check this carefully)
- * @param randGen_ptr - array of pointers to the PRNG instances
+ * @param randGen_ptr - the array of pointers to the PRNG instances
  */
 void simpleRandomRunz(int numberOfThreads, Random *randGen_ptr){
     // create the files where the data will go; one file for each thread
@@ -87,7 +90,18 @@ void simpleRandomRunz(int numberOfThreads, Random *randGen_ptr){
 }
 
 
-void preDefinDistrRandomRunz(int numberOfThreads, Random *randGen_ptr)
+/**
+ * @brief Takes a vector of weights and generates the `numberOfThreads` of files with random integers between 0 and
+ * len(weights)-1 with accordance to the weights given in the vector.
+ *
+ * The weights vector contains WEIGHTS, not probabilities. It's elements do not have to sum to 1.0.
+ *
+ * @param numberOfThreads - how many threads are there (must check this carefully)
+ * @param weights - the weights STL vector, elements don't have to sum to 1.0
+ * @param randGen_ptr - the array of pointers to the PRNG instances
+ */
+void preDefinDistrRandomRunz(int numberOfThreads, std::vector<float> weights,
+                             Random *randGen_ptr)
 {
     // create the files where the data will go; one file for each thread
     std::ofstream randomFiles;
@@ -98,7 +112,6 @@ void preDefinDistrRandomRunz(int numberOfThreads, Random *randGen_ptr)
         randomFiles << "#random_numbers\n";  // file header
         randomFiles.close();
     }
-    static std::vector<float> weights = {0.1, 0.5, 0.5, 0.1};
     // The parallel section starts here :
     #pragma omp parallel default(none) shared(randGen_ptr, weights, std::cout)
     {

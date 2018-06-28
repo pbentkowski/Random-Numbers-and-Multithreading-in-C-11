@@ -37,8 +37,13 @@ void Random::reseed(unsigned int seed)
  */
 unsigned int Random::getRandomFromUniform(unsigned int from, unsigned int thru)
 {
-    if(from == thru)
+    if( from == thru )
         return from;
+    if( from > thru ){
+        unsigned int tmp = from;
+        from = thru;
+        thru = tmp;
+    }
     static std::uniform_int_distribution<unsigned int> d{};
     using parm_t = decltype(d)::param_type;
     return d( m_mt, parm_t{from, thru} );

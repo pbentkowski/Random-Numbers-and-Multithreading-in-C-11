@@ -3,7 +3,6 @@
 #ifndef RANDOM_H
 #define RANDOM_H
 
-template <class T> using DistributionOf = std::pair<T*,float>;
 
 /**
  * @brief A handy class for managing your daily pseudo-random number generation with C++11 STL <random> library
@@ -37,10 +36,6 @@ class Random{
         unsigned int getRandomFromDist(const std::vector<float> &dist);
         //return a random value in [min, max] according to the distribution in dist
         unsigned int getRandomFromDist(const std::vector<float> &dist, unsigned int min, unsigned int max);
-
-        template<class T> T* getRandomFromDist(const std::vector<DistributionOf<T>> &dist);  //return a random value in [0, dist.size()] according to the distribution in dist
-        template <class TClass> static TClass getSecondInClass(const std::vector<std::pair<unsigned int,TClass>>& vectOfPairs, unsigned int first);
-
 };
 
 ////template
