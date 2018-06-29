@@ -106,59 +106,77 @@ unsigned int Random::getRandomIntegersWithWeights(std::vector<float> weights)
 }
 
 
-// ================================================================================================================== //
-
-// return a random value in [min, max] according to the distribution in dist
-unsigned int Random::getRandomFromDist(const std::vector<float> &dist, unsigned int min, unsigned int max)
-{
-    if( dist.size() == 1 )
-        return dist[0];
-    if( min == max )
-        return dist[min];
-    float rr;
-    static std::uniform_real_distribution<float> d{};
-    using parm_t = decltype(d)::param_type;
-    if(min == 0){
-        rr = d( m_mt, parm_t{0., dist[max]} );
+/**
+ * @brief Takes the Custom Probability Data Structure and select a value in correspondence to the probability
+ * distribution given.
+ *
+ * @param probData - CustomProb data structure with vectors of values and corresponding probabilities
+ * @return - one, randomly selected (in accordance to probability distribution given) value
+ */
+float Random::getValueAccordingToGivenProb(CustomProb probData) {
+    if (probData.isCustomProbOK()) {
+        std::discrete_distribution<unsigned int> d3(probData.getProbals().begin(), probData.getProbals().end());
+        unsigned int rr = d3(m_mt);
+        return probData.getValues()[rr];
     } else {
-        rr = d( m_mt, parm_t{dist[min-1], dist[max]} );
+        throw std::logic_error("ERROR in Random::getValueAccordingToGivenProb(): The probability and value data format is incorrect");
     }
-    unsigned int value;
-    for( value = min; rr > dist[value]; value++ );
-    if(value >= dist.size())
-        throw std::logic_error("Random: distribution overflow");
-    return value;
-}
-
-//return a random value in [0, dist.size()-1] according to the distribution in dist
-unsigned int Random::getRandomFromDist(const std::vector<float> &dist)
-{
-    return getRandomFromDist(dist, 0, dist.size()-1);
 }
 
 
-// return a random value in [min, max] according to the distribution in dist
-unsigned int Random::getRandomFromDist(float *dist, unsigned int size, unsigned int min, unsigned int max)
-{
-    if( min == max )
-        return dist[min];
-    float rr;
-    static std::uniform_real_distribution<float> d{};
-    using parm_t = decltype(d)::param_type;
-    if(min == 0){
-        rr = d( m_mt, parm_t{0., dist[max]} );
-    } else {
-        rr = d( m_mt, parm_t{dist[min-1], dist[max]} );
+std::vector<float> Random::getAlotOfValuesAccordingToGivenProb(Random::CustomProb probData, unsigned int manySamples) {
+    std::vector<float> randomz;
+    if( manySamples == 1 ) {
+        randomz.push_back(getValueAccordingToGivenProb(probData));
+        return randomz;
     }
-    unsigned int value;
-    for( value = min; rr > dist[value]; value++ );
-    if( value >= size )
-        throw std::logic_error("Random: distribution overflow");
-    return value;
 }
 
-//return a random value in [0, size-1] according to the distribution in dist
-unsigned int Random::getRandomFromDist(float *dist, unsigned int size)
-{
-    return getRandomFromDist(dist, size, 0, size-1);
+
+Random::CustomProb::CustomProb() {
+    probals.clear();
+    values.clear();
+    isOK = false;
+}
+
+
+/**
+ * @brief Checks if the vector of probability distribution is equal in size to the vector of values and if it sums to 1.0
+ *
+ * @return - true if the probabilities vector makes sense as probabilities
+ */
+bool Random::CustomProb::checkProbs(){
+    if (probals.size() != values.size())
+        throw std::logic_error("ERROR in CustomProb: Probability and value vectors are of unequal lengths:\nprobals.size() = "
+                               + std::to_string(probals.size()) + " , values.size() = " + std::to_string(values.size()));
+    float sumProbs = 0.0;
+    for (auto it = probals.begin(); it != probals.end(); it++) {
+        sumProbs += *it;
+    }
+    if (sumProbs != 1.0)
+        throw std::logic_error("ERROR in CustomProb: The probabilities do not sum to 1.0! They sum to "
+                               + std::to_string(sumProbs));
+    isOK = true;
+    return isOK;
+}
+
+/**
+ * @brief Loads two vectors: probability distribution and values to a CustomProb data structure. Does basic data
+ * consistency checks.
+ *
+ * @param probs - vector of probabilities (has to sum to 1.0)
+ * @param vals - vector of the corresponding values
+ * @return - true if data were loaded successfully
+ */
+bool Random::CustomProb::loadTheData(std::vector<float> probs, std::vector<float> vals) {
+    if (probs.size() == 0)
+         throw std::logic_error("ERROR in CustomProb: Probability vector size is 0");
+    if (vals.size() == 0)
+         throw std::logic_error("ERROR in CustomProb: Values vector size is 0");
+    probals = probs;
+    values = vals;
+    if (checkProbs() )
+        return true;
+    else
+        return false;
 }

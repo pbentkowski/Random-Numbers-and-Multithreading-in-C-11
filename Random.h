@@ -17,6 +17,19 @@ class Random{
         Random();
         ~Random();
         void reseed(uint32_t seed);
+        class CustomProb {
+            private:
+                std::vector<float> probals;
+                std::vector<float> values;
+                bool isOK;
+            public:
+                CustomProb();
+                bool checkProbs();
+                std::vector<float> getProbals() { return probals; }
+                std::vector<float> getValues() { return values; }
+                bool loadTheData(std::vector<float> probs, std::vector<float> vals);
+                bool isCustomProbOK() { return isOK;}
+        };
         //return a random unsigned int value in [min, max] from uniform distribution
         unsigned int getRandomFromUniform(unsigned int min, unsigned int max);
         //return a random float value in [0, 1) from uniform distribution
@@ -28,17 +41,8 @@ class Random{
         // return integer form [0, weights.size()] with weights proportional to ones given in the weights vector
         unsigned int getRandomIntegersWithWeights(std::vector<float> weights);
 
-        //return a random value in [0, size-1] according to the distribution in dist
-        unsigned int getRandomFromDist(float *dist, unsigned int size);
-        //return a random value in [min, max] according to the distribution in dist
-        unsigned int getRandomFromDist(float *dist, unsigned int size, unsigned int min, unsigned int max);
-        //return a random value in [0, dist.size()] according to the distribution in dist
-        unsigned int getRandomFromDist(const std::vector<float> &dist);
-        //return a random value in [min, max] according to the distribution in dist
-        unsigned int getRandomFromDist(const std::vector<float> &dist, unsigned int min, unsigned int max);
+        float getValueAccordingToGivenProb(CustomProb probData);
+        std::vector<float> getAlotOfValuesAccordingToGivenProb(CustomProb probData, unsigned int manySamples);
 };
-
-////template
-//#include "Random_template.h"
 
 #endif // RANDOM_H

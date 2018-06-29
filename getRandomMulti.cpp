@@ -16,9 +16,9 @@
  // https://isocpp.org/files/papers/n3551.pdf
 
 // Function declarations
-void simpleRandomRunz(int numberOfThreads, Random *randGen_ptr);
-void preDefinDistrRandomRunz(int numberOfThreads, std::vector<float> weigths,
-                             Random *randGen_ptr);
+void simpleRandomRunz        (int numberOfThreads, Random *randGen_ptr);
+void preDefinDistrRandomRunz (int numberOfThreads, std::vector<float> weigths, Random *randGen_ptr);
+void customRandomRunz        (int numberOfThreads, Random::CustomProb probsAndVals, Random *randGen_ptr);
 
 
 int main()
@@ -41,11 +41,19 @@ int main()
         rng[j].reseed(seed*(j+1));
     }
 
-    // run the parallel random machinery
+    // run the parallel random machinery - simple stuff
 //    simpleRandomRunz(numberOfThreads, rng);
 
-    std::vector<float> weights = {0.1, 0.5, 0.5, 0.1};
-    preDefinDistrRandomRunz(numberOfThreads, weights, rng);
+    // run the parallel random machinery -  [0, len(n)-1] integers according to weights in a vector
+//    std::vector<float> weights = {0.1, 0.5, 0.5, 0.1};
+//    preDefinDistrRandomRunz(numberOfThreads, weights, rng);
+
+     // run the parallel random machinery -  values according to probability distribution in a vector
+    std::vector<float> probs = {0.1, 0.2, 0.3, 0.2, 0.1, 0.1};
+    std::vector<float> vals =  {1.1, 2.5, 3.1, 3.5, 4.1, 4.2};
+    Random::CustomProb probsAndVals;
+    probsAndVals.loadTheData(probs, vals);
+    customRandomRunz(numberOfThreads, probsAndVals, rng);
 
     std::cout << "Done! Check the 'randomz_*.dat' files for output. "
               << std::endl;
@@ -100,8 +108,7 @@ void simpleRandomRunz(int numberOfThreads, Random *randGen_ptr){
  * @param weights - the weights STL vector, elements don't have to sum to 1.0
  * @param randGen_ptr - the array of pointers to the PRNG instances
  */
-void preDefinDistrRandomRunz(int numberOfThreads, std::vector<float> weights,
-                             Random *randGen_ptr)
+void preDefinDistrRandomRunz(int numberOfThreads, std::vector<float> weights, Random *randGen_ptr)
 {
     // create the files where the data will go; one file for each thread
     std::ofstream randomFiles;
@@ -124,6 +131,45 @@ void preDefinDistrRandomRunz(int numberOfThreads, std::vector<float> weights,
                 }
                 // this is the line you're looking for:
                 randomzFile << randGen_ptr[omp_get_thread_num()].getRandomIntegersWithWeights(weights) << std::endl;
+        }
+        if (randomzFile.is_open())
+            randomzFile.close();
+    }
+    // The end of the parallel section
+}
+
+
+/**
+ * @brief Takes a `Random::CustomProb` data structure and generates values from it with probabilities defined by
+ * a custom probability distribution
+ *
+ * @param numberOfThreads - how many threads are there (must check this carefully)
+ * @param probsAndVals - a data structure holding values and corresponding probability distribution
+ * @param randGen_ptr  - the array of pointers to the PRNG instance
+ */
+void customRandomRunz(int numberOfThreads, Random::CustomProb probsAndVals, Random *randGen_ptr)
+{
+    // create the files where the data will go; one file for each thread
+    std::ofstream randomFiles;
+    std::string filename;
+    for( int threadID = 0; threadID < numberOfThreads; ++threadID ) {
+        filename = "randomz_"   + std::to_string(threadID) + ".dat";
+        randomFiles.open(filename, std::ios::out | std::ios::trunc);
+        randomFiles << "#random_numbers\n";  // file header
+        randomFiles.close();
+    }
+    // The parallel section starts here :
+    #pragma omp parallel default(none) shared(randGen_ptr, probsAndVals, std::cout)
+    {
+        std::ofstream randomzFile;
+        #pragma omp for schedule(dynamic)
+        for( unsigned int i = 1; i <= 10000; ++i ){
+            if(!randomzFile.is_open()) {
+                    std::string filenameRand = "randomz_" + std::to_string(omp_get_thread_num()) + ".dat";
+                    randomzFile.open(filenameRand, std::ios::out | std::ios::ate | std::ios::app);
+                }
+                // this is the line you're looking for:
+                randomzFile << randGen_ptr[omp_get_thread_num()].getValueAccordingToGivenProb(probsAndVals) << std::endl;
         }
         if (randomzFile.is_open())
             randomzFile.close();
