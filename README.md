@@ -11,7 +11,7 @@ Three files showing how to use it:
 
 #### Compilation
 
-Compiles with **g++ (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609** and runs e.g. by typing
+Compiles with **g++ 5.4.0** (Ubuntu 5.4.0-6ubuntu1~16.04.9) and runs e.g. by typing
 
 ```
 mkdir bin
