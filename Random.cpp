@@ -115,9 +115,10 @@ unsigned int Random::getRandomIntegersWithWeights(std::vector<float> weights)
  */
 float Random::getValueAccordingToGivenProb(CustomProb probData) {
     if (probData.isCustomProbOK()) {
-        std::discrete_distribution<unsigned int> d3(probData.getProbals().begin(), probData.getProbals().end());
+        std::vector<float> tmpPros = probData.getProbals();
+        std::discrete_distribution<unsigned int> d3(tmpPros.begin(), tmpPros.end());
         unsigned int rr = d3(m_mt);
-        return probData.getValues()[rr];
+        return probData.getOneValue(rr);
     } else {
         throw std::logic_error("ERROR in Random::getValueAccordingToGivenProb(): The probability and value data format is incorrect");
     }
@@ -179,4 +180,17 @@ bool Random::CustomProb::loadTheData(std::vector<float> probs, std::vector<float
         return true;
     else
         return false;
+}
+
+
+std::vector<float> Random::CustomProb::getProbals() {
+    return probals;
+}
+
+float Random::CustomProb::getOneValue(unsigned int indx) {
+    if (indx > values.size())
+        throw std::logic_error("ERROR in getOneValue(): trying to access the value vector out-off-bounds");
+    else {
+        return values[indx];
+    }
 }

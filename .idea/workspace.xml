@@ -31,7 +31,7 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state>
               <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
             </state>
           </provider>
@@ -40,17 +40,17 @@
       <file leaf-file-name="Random.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Random.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="35" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="35" />
+            <state relative-caret-position="312">
+              <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Random.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Random.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Random.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-247">
-              <caret line="116" column="34" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+            <state relative-caret-position="8">
+              <caret line="118" column="76" selection-start-line="118" selection-start-column="76" selection-end-line="118" selection-end-column="76" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -58,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getRandomMulti.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="getRandomMulti.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getRandomMulti.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
-              <caret line="171" selection-start-line="171" selection-end-line="171" />
+              <caret line="63" column="104" selection-start-line="63" selection-start-column="104" selection-end-line="63" selection-end-column="104" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -84,9 +84,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/getRandomMulti.cpp" />
         <option value="$PROJECT_DIR$/Random.h" />
         <option value="$PROJECT_DIR$/Random.cpp" />
+        <option value="$PROJECT_DIR$/getRandomMulti.cpp" />
       </list>
     </option>
   </component>
@@ -110,7 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,6 +121,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -165,6 +165,8 @@
       <workItem from="1530203047116" duration="1412000" />
       <workItem from="1530204474241" duration="1250000" />
       <workItem from="1530267527907" duration="8160000" />
+      <workItem from="1530528129492" duration="9000" />
+      <workItem from="1530708570452" duration="3495000" />
     </task>
     <task id="LOCAL-00001" summary="Changes in the documentation mostly">
       <created>1530205051653</created>
@@ -177,20 +179,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25832000" />
+    <option name="totallyTimeSpent" value="29336000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="2562" height="1404" extended-state="6" />
+    <frame x="-1" y="0" width="2562" height="1404" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49704143" visible="true" weight="0.24990146" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49467456" visible="true" weight="0.24990146" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3298969" />
       <window_info anchor="bottom" id="CMake" order="7" weight="0.3298969" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3298969" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298969" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="Structure" order="1" sideWeight="0.5029586" side_tool="true" visible="true" weight="0.24990146" />
+      <window_info id="Structure" order="1" sideWeight="0.50532544" side_tool="true" visible="true" weight="0.24990146" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3996828" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -215,10 +217,78 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Random.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getRandomMulti.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Random.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="34" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Random.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getRandomMulti.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Random.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="34" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -323,7 +393,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state>
           <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
@@ -351,27 +421,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Random.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="35" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="35" />
+        <state relative-caret-position="312">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Random.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="118" column="76" selection-start-line="118" selection-start-column="76" selection-end-line="118" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/getRandomMulti.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
-          <caret line="171" selection-start-line="171" selection-end-line="171" />
+          <caret line="63" column="104" selection-start-line="63" selection-start-column="104" selection-end-line="63" selection-end-column="104" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Random.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="116" column="34" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>

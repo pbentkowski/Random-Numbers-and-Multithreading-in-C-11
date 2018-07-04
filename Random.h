@@ -25,8 +25,8 @@ class Random{
             public:
                 CustomProb();
                 bool checkProbs();
-                std::vector<float> getProbals() { return probals; }
-                std::vector<float> getValues() { return values; }
+                std::vector<float> getProbals();
+                float getOneValue(unsigned int indx);
                 bool loadTheData(std::vector<float> probs, std::vector<float> vals);
                 bool isCustomProbOK() { return isOK;}
         };

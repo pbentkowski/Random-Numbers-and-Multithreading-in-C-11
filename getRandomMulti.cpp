@@ -50,7 +50,7 @@ int main()
 
      // run the parallel random machinery -  values according to probability distribution in a vector
     std::vector<float> probs = {0.1, 0.2, 0.3, 0.2, 0.1, 0.1};
-    std::vector<float> vals =  {1.1, 2.5, 3.1, 3.5, 4.1, 4.2};
+    std::vector<float> vals =  {1.5, 2.5, 3.0, 3.5, 4.5, 5.5};
     Random::CustomProb probsAndVals;
     probsAndVals.loadTheData(probs, vals);
     customRandomRunz(numberOfThreads, probsAndVals, rng);
@@ -61,6 +61,7 @@ int main()
     return 0;
 }
 
+// =====================================================================================================
 
 /**
  * @brief Generates the `numberOfThreads` of files with random integers between 0 and 99 (inclusive)
