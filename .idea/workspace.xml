@@ -13,9 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="02395310-9bd2-4b94-a618-951b3af33787" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Random.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Random.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Random.h" beforeDir="false" afterPath="$PROJECT_DIR$/Random.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getRandomMulti.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/getRandomMulti.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +58,7 @@
       <file leaf-file-name="getRandomMulti.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getRandomMulti.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="505">
               <caret line="63" column="104" selection-start-line="63" selection-start-column="104" selection-end-line="63" selection-end-column="104" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -126,7 +123,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../abm" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -166,7 +163,7 @@
       <workItem from="1530204474241" duration="1250000" />
       <workItem from="1530267527907" duration="8160000" />
       <workItem from="1530528129492" duration="9000" />
-      <workItem from="1530708570452" duration="3495000" />
+      <workItem from="1530708570452" duration="3915000" />
     </task>
     <task id="LOCAL-00001" summary="Changes in the documentation mostly">
       <created>1530205051653</created>
@@ -175,24 +172,31 @@
       <option name="project" value="LOCAL" />
       <updated>1530205051653</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix a problem with seg fault &#10;&#10; - a local copy of the probs vector had to be created inside the function">
+      <created>1530714187303</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1530714187303</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29336000" />
+    <option name="totallyTimeSpent" value="29756000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="2562" height="1404" extended-state="7" />
+    <frame x="-1" y="0" width="2562" height="1404" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49467456" visible="true" weight="0.24990146" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49563837" visible="true" weight="0.24990146" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3298969" />
       <window_info anchor="bottom" id="CMake" order="7" weight="0.3298969" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3298969" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3298969" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="Structure" order="1" sideWeight="0.50532544" side_tool="true" visible="true" weight="0.24990146" />
+      <window_info id="Structure" order="1" sideWeight="0.5043616" side_tool="true" visible="true" weight="0.24990146" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3996828" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -213,7 +217,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes in the documentation mostly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in the documentation mostly" />
+    <MESSAGE value="Fix a problem with seg fault &#10;&#10; - a local copy of the probs vector had to be created inside the function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix a problem with seg fault &#10;&#10; - a local copy of the probs vector had to be created inside the function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -438,7 +443,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getRandomMulti.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="505">
           <caret line="63" column="104" selection-start-line="63" selection-start-column="104" selection-end-line="63" selection-end-column="104" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
