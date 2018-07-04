@@ -15,7 +15,7 @@ Compiles with **g++ 5.4.0** (Ubuntu 5.4.0-6ubuntu1~16.04.9) and runs e.g. by typ
 
 ```
 mkdir bin
-g++ -o bin/rands Random.cpp getRandomMulti.cpp -std=c++11 -fopenmp
+g++ -o bin/rands Random.cpp getRandomMulti.cpp -O2 -std=c++11 -fopenmp
 ./bin/rands
 ```
 
