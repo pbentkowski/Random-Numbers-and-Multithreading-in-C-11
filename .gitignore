@@ -4,6 +4,7 @@ obj/
 old/
 results/
 cmake-build-debug/
+.idea
 # ignore temp files
 *~
 # ignore other files
