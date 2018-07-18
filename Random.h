@@ -19,13 +19,13 @@ class Random{
         void reseed(uint32_t seed);
         class CustomProb {
             private:
-                std::vector<float> probals;
+                std::vector<float> probabils;
                 std::vector<float> values;
                 bool isOK;
             public:
                 CustomProb();
                 bool checkProbs();
-                std::vector<float> getProbals();
+                std::vector<float> getProbabils();
                 float getOneValue(unsigned int indx);
                 bool loadTheData(std::vector<float> probs, std::vector<float> vals);
                 bool isCustomProbOK() { return isOK;}

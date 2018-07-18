@@ -14,10 +14,20 @@ Three files showing how to use it:
 Compiles with **g++ 5.4.0** (Ubuntu 5.4.0-6ubuntu1~16.04.9) and runs e.g. by typing
 
 ```
-mkdir bin
-g++ -o bin/rands Random.cpp getRandomMulti.cpp -O2 -std=c++11 -fopenmp
-./bin/rands
+g++ -o rands Random.cpp getRandomMulti.cpp -O2 -std=c++11 -fopenmp
+./rands
 ```
+
+You can check the results in Ipython:
+
+```python
+%pylab
+ww0 = np.genfromtxt("randomz_0.dat", skip_header=1)
+ww1 = np.genfromtxt("randomz_1.dat", skip_header=1)
+ww2 = np.genfromtxt("randomz_2.dat", skip_header=1)
+hh = plt.hist(np.hstack((ww0, ww1, ww2)))
+```
+
 
 #### Reference
 

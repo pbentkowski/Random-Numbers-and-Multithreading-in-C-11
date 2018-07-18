@@ -14,8 +14,7 @@ Random::Random(): m_mt(std::mt19937(13637))
  * @brief Just a destructor
  */
 Random::~Random()
-{
-}
+= default;
 
 /**
  * @brief Re-seed the PRNG machinery with a new seed
@@ -59,7 +58,7 @@ float Random::getUni()
 {
     static std::uniform_real_distribution<float> d{};
     using parm_t = decltype(d)::param_type;
-    return d( m_mt, parm_t{0., 1.} );
+    return d( m_mt, parm_t{0, 1} );
 }
 
 
@@ -87,7 +86,7 @@ float Random::getRandomFromGaussian(float mean, float variance)
 bool Random::getBool(float prob){
     static std::uniform_real_distribution<float> d{};
     using parm_t = decltype(d)::param_type;
-    return ( d( m_mt, parm_t{0., 1.} ) < prob );
+    return ( d( m_mt, parm_t{0, 1} ) < prob );
 }
 
 
@@ -115,7 +114,7 @@ unsigned int Random::getRandomIntegersWithWeights(std::vector<float> weights)
  */
 float Random::getValueAccordingToGivenProb(CustomProb probData) {
     if (probData.isCustomProbOK()) {
-        std::vector<float> tmpPros = probData.getProbals();
+        std::vector<float> tmpPros = probData.getProbabils();
         std::discrete_distribution<unsigned int> d3(tmpPros.begin(), tmpPros.end());
         unsigned int rr = d3(m_mt);
         return probData.getOneValue(rr);
@@ -135,7 +134,7 @@ std::vector<float> Random::getAlotOfValuesAccordingToGivenProb(Random::CustomPro
 
 
 Random::CustomProb::CustomProb() {
-    probals.clear();
+    probabils.clear();
     values.clear();
     isOK = false;
 }
@@ -147,12 +146,12 @@ Random::CustomProb::CustomProb() {
  * @return - true if the probabilities vector makes sense as probabilities
  */
 bool Random::CustomProb::checkProbs(){
-    if (probals.size() != values.size())
+    if (probabils.size() != values.size())
         throw std::logic_error("ERROR in CustomProb: Probability and value vectors are of unequal lengths:\nprobals.size() = "
-                               + std::to_string(probals.size()) + " , values.size() = " + std::to_string(values.size()));
+                               + std::to_string(probabils.size()) + " , values.size() = " + std::to_string(values.size()));
     float sumProbs = 0.0;
-    for (auto it = probals.begin(); it != probals.end(); it++) {
-        sumProbs += *it;
+    for (float &probabil : probabils) {
+        sumProbs += probabil;
     }
     if (sumProbs != 1.0)
         throw std::logic_error("ERROR in CustomProb: The probabilities do not sum to 1.0! They sum to "
@@ -170,21 +169,18 @@ bool Random::CustomProb::checkProbs(){
  * @return - true if data were loaded successfully
  */
 bool Random::CustomProb::loadTheData(std::vector<float> probs, std::vector<float> vals) {
-    if (probs.size() == 0)
+    if (probs.empty())
          throw std::logic_error("ERROR in CustomProb: Probability vector size is 0");
-    if (vals.size() == 0)
+    if (vals.empty())
          throw std::logic_error("ERROR in CustomProb: Values vector size is 0");
-    probals = probs;
+    probabils = probs;
     values = vals;
-    if (checkProbs() )
-        return true;
-    else
-        return false;
+    return checkProbs();
 }
 
 
-std::vector<float> Random::CustomProb::getProbals() {
-    return probals;
+std::vector<float> Random::CustomProb::getProbabils() {
+    return probabils;
 }
 
 float Random::CustomProb::getOneValue(unsigned int indx) {

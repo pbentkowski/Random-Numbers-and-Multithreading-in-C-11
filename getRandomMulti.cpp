@@ -1,13 +1,13 @@
 #include <iostream>    // for generic input/output
 #include <fstream>     // for input/output on files
-#include <time.h>      // for seeding the PRNG engine
+#include <ctime>      // for seeding the PRNG engine
 #include <omp.h>       // for parallel computation/**/
 #include "Random.h"
 
- // Compiles with g++ (Ubuntu 5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609 by typing
- // mkdir bin
- // g++ -o bin/rands Random.cpp getRandomMulti.cpp -std=c++11 -fopenmp
- // ./bin/rands
+ // Compiles with g++  by typing
+ //
+ // g++ -o rands Random.cpp getRandomMulti.cpp -std=c++11 -fopenmp
+ // ./rands
 
  // Regarding the multithreading programming in C++11  for a guide into OpenMP
  // see https://bisqwit.iki.fi/story/howto/openmp/
@@ -17,7 +17,7 @@
 
 // Function declarations
 void simpleRandomRunz        (int numberOfThreads, Random *randGen_ptr);
-void preDefinDistrRandomRunz (int numberOfThreads, std::vector<float> weigths, Random *randGen_ptr);
+void preDefinDistrRandomRunz (int numberOfThreads, std::vector<float> weights, Random *randGen_ptr);
 void customRandomRunz        (int numberOfThreads, Random::CustomProb probsAndVals, Random *randGen_ptr);
 
 
@@ -34,11 +34,12 @@ int main()
     rng = new Random[numberOfThreads];
 
     // re-seeds the PRNG instances with different seeds, also selected (semi)randomly
+    // If you skip it, the PRNG will be initialised from the std::random_device()
     srand (static_cast<unsigned int>(time(nullptr)));
     int seed = rand();
     // int seed = 232323;  // or use the fixed seed
     for (int j = 0; j < numberOfThreads; ++j){
-        rng[j].reseed(seed*(j+1));
+        rng[j].reseed(static_cast<uint32_t>(seed * (j + 1)));
     }
 
     // run the parallel random machinery - simple stuff
