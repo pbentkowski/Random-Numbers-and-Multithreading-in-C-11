@@ -58,7 +58,7 @@ int main()
     std::cout << "Done! Check the 'randomz_*.dat' files for output. "
               << std::endl;
 
-    return 0;
+    exit(0);
 }
 
 // =====================================================================================================
