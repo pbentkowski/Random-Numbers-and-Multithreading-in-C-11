@@ -43,10 +43,12 @@ int main()
     }
 
     // run the parallel random machinery - simple stuff
+    // Parallelism is built into the function below
 //    simpleRandomRunz(numberOfThreads, rng);
 
     // run the parallel random machinery -  [0, len(n)-1] integers according to weights in a vector
 //    std::vector<float> weights = {0.1, 0.5, 0.5, 0.1};
+    // Parallelism is built into the function below
 //    preDefinDistrRandomRunz(numberOfThreads, weights, rng);
 
      // run the parallel random machinery -  values according to probability distribution in a vector
@@ -54,6 +56,7 @@ int main()
     std::vector<float> vals =  {1.5, 2.5, 3.0, 3.5, 4.5, 5.5};
     Random::CustomProb probsAndVals;
     probsAndVals.loadTheData(probs, vals);
+    // Parallelism is built into the function below
     customRandomRunz(numberOfThreads, probsAndVals, rng);
 
     std::cout << "Done! Check the 'randomz_*.dat' files for output. "
