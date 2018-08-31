@@ -13,7 +13,7 @@ Three files showing how to use it:
 
 Compiles with **g++ 5.4.0** (Ubuntu 5.4.0-6ubuntu1~16.04.9) and runs e.g. by typing
 
-```
+```bash
 g++ -o rands Random.cpp getRandomMulti.cpp -O2 -std=c++11 -fopenmp
 ./rands
 ```
