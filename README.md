@@ -7,7 +7,7 @@ Three files showing how to use it:
  - `Random.h` - header file for the library
  - `Random.cpp` - implementations of functions generating RNs from different distributions, but using the same engine
  - `getRandomMulti.cpp` - examples how to do it in a multi-threading environment
-  `mutatorTest.cpp` - simple program scaling 'whole-bitsting mutation' to 'point mutations' in binary strings and checking if the scaling gives the same fraction of altered bitsting https://ndownloader.figshare.com/files/2546683
+ - `mutatorTest.cpp` - simple program scaling 'whole-bitsting mutation' to 'point mutations' in binary strings and checking if the scaling gives the same fraction of altered bitsting https://ndownloader.figshare.com/files/2546683
 
 
 #### Compilation
